@@ -16,7 +16,7 @@ namespace QeAColors.Controllers
         {
             if (Session["Player"] == null)
             {
-                return RedirectToAction("~/Home");
+                return RedirectToAction("../Home");
             }
 
             if (Session["Questions"] == null)
