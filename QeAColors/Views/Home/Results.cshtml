@@ -1,0 +1,31 @@
+﻿@model IEnumerable<QeAColors.Models.Result>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>
+    Resultados
+    @using (Html.BeginForm("New", "Home", FormMethod.Get))
+    {
+        <input type="submit" value="Novo Jogo ▶️" class="btn btn-success" />
+    }
+</h2>
+
+<table class="table">
+    <tr>
+        <th>Início</th>
+        <th>Fim</th>
+        <th>Pontos</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.DateStart.ToShortTimeString()</td>
+        <td>@item.DateEnd.ToShortTimeString()</td>
+        <td>@item.CountResult</td>
+    </tr>
+}
+
+</table>
